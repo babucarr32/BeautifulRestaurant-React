@@ -5,12 +5,13 @@ import Menu from "./components/Body/Menu/Menu";
 import Location from "./components/Body/Location/Location";
 import Contact from "./components/Body/ContactUs/Contact";
 import Order from "./components/Body/OrderNow/Order";
+import Header from "./components/Header/Header";
 
 function Main() {
   return (
     <div>
-        {/* <LandingPage></LandingPage> */}
         <BrowserRouter>
+            <Header></Header>
             <Routes>
                 <Route path='/' element={<LandingPage />}/>
                 <Route path='/menu' element={<Menu />}/>

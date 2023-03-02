@@ -4,7 +4,7 @@ import "../../../assets/css/Header.css"
 function Location() {
   return (
     <div>
-        <h1>I am location</h1>
+        <h1>I am Location</h1>
     </div>
   );
 }

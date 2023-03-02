@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import image from "../../assets/images/NewBurger.png";
 import BurgerImage from "./BurgerImage";
-import BurgerTypes from "./BurgerTypes";
 import SocialMediaSites from "./SocialMediaSites";
 import "../../assets/css/LandingPage.css";
 import bbqBurger from "../../assets/images/BBQBurger.png";
