@@ -3,6 +3,7 @@ import image from "../../assets/images/NewBurger.png";
 import bbqBurger from "../../assets/images/BBQBurger.png";
 import carolina from "../../assets/images/Corolina.png";
 import friedChickenBurger from "../../assets/images/friedChickenBurger.png";
+import SocialMediaSites from "./SocialMediaSites";
 import "../../assets/css/LandingPage.css";
 
 function LandingPageContent() {
@@ -10,6 +11,7 @@ function LandingPageContent() {
     <div>
         <div className="landingContent">
           <div className="landing">
+            <SocialMediaSites />
             <div className="welcomeText">
                 <p className="welcome"><span>Welcome</span>  to <br /> The worlds <br /> <span>Best Restaurant</span></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>

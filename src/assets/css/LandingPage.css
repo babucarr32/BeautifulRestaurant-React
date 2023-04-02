@@ -4,7 +4,7 @@
 }
 :root{
   --red: #e60000;
-  --green: rgb(11, 191, 11);
+  --green: #0bbf0b;
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,23 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 0 25px rgb(118, 118, 118);
+  box-shadow: 0 0 25px rgb(227, 109, 109);
+}
+.welcomeText{
+  /* box-shadow: -3px 0 8px black; */
+  /* overflow: hidden; */
+  padding-left: 40px;
+  position: relative;
+}
+.welcomeText::before{
+  position: absolute;
+  content: "";
+  width: 500px;
+  height: 98%;
+  left: -2px;
+  z-index: -1;
+  border-left: 1px solid black;
+  filter: blur(2px);
 }
 .welcomeText span{
   color: var(--red);
