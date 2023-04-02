@@ -19,15 +19,22 @@ export class LandingPageContent extends Component {
   render () {
     const changeImage = (event)=> {
       const imagePath = event.target.name;
-      console.log(this.state)
-      const x = document.getElementById("mainImage").src = this.state[imagePath];
+      console.log(imagePath)
+      try{
+        document.getElementById("hideBurgerLast").src = this.state[imagePath];
+        document.getElementById("hideBurgerFirst").src = this.state[imagePath];
+      }
+      catch(err){
+      }
+
     }
-    console.log(this)
     return (
       <div>
         <div className="landingContent">
           <div className="landing">
-            <SocialMediaSites />
+            <div className="hideBurgerLast">
+              <SocialMediaSites />
+            </div>
             <div className="welcomeText">
                 <p className="welcome"><span>Welcome</span>  to <br /> The worlds <br /> <span>Best Restaurant</span></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -38,22 +45,29 @@ export class LandingPageContent extends Component {
                 </ul>
                 <div className="addToCart">
                   <ul>
-                    <li><p className="addToCartText">Add To Cart</p></li>
+                    <li><p className="addToCartText">Add +</p></li>
                     <li><p className="price">$12.99</p></li>
                     <li className="delList"><del>$16.99</del></li>
                   </ul>
                 </div>
-
+                <div className="hideBurgerFirst">
+                  <BurgerImage  id={"hideBurgerFirst"}/>
+                </div>
                 <div className="burgerTypes">
                     <ul>
-                        <li onClick={changeImage}><img id="mainImages" src={image} name="image" alt="" /></li>
+                        <li onClick={changeImage}><img className="mainImages" src={image} name="image" alt="" /></li>
                         <li onClick={changeImage}><img src={bbqBurger} alt="" name="bbqBurger" /></li>
                         <li onClick={changeImage}><img src={carolina} alt="" name="carolina" /></li>
                         <li onClick={changeImage}><img src={friedChickenBurger} alt="" name="friedChickenBurger" /></li>
                     </ul>
                 </div>
+              <SocialMediaSites />
             </div>
-            <BurgerImage  />
+            <div className="hideBurgerLast">
+              <BurgerImage  id={"hideBurgerLast"}/>
+            </div>
+            <div className="hideBurgerFirst">
+            </div>
           </div>
         </div>
     </div>

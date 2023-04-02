@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --red: #e60000;
+    --green: #0bbf0b;
+}
+.mainImage img{
+    width: 45vw;
+}
