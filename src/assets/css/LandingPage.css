@@ -1,3 +1,10 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+:root{
+  --red: #e60000;
+}
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -11,10 +18,34 @@ body{
   justify-content: space-between;
   box-shadow: 0 0 25px rgb(118, 118, 118);
 }
+.welcomeText span{
+  color: var(--red);
+}
 .welcomeText p{
-  font-size: 4em;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+.welcomeText .welcome{
   letter-spacing: 5px;
+  font-size: 4em;
   font-weight: 900;
+}
+.welcomeText ul{
+  list-style-type: none;
+  margin: 20px;
+  margin-left: 0;
+  display: flex;
+  gap: 20px;
+}
+.welcomeText ul li p{
+  border: 1px solid black;
+  padding: 8px 20px;
+  border-radius: 3vw;
+}
+.welcomeText ul li .Spicy{
+  background-color: #e60000;
+  color: white;
+  border-color: #e60000;
 }
 
 
