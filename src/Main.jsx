@@ -1,10 +1,12 @@
 import React from "react";
+import LandingPage from "./components/Body/LandingPage";
 
-function App() {
+function Main() {
   return (
     <div>
+        <LandingPage></LandingPage>
     </div>
   );
 }
 
-export default App;
+export default Main;
