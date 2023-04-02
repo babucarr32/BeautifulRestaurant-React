@@ -2,14 +2,20 @@ import React from "react";
 import "../../assets/css/Header.css"
 
 function Header() {
+  const showHiddenItems = ()=>{
+    console.log("clicked")
+  }
   return (
     <div>
         <div className="header">
-          <div className="headerHidden">
-            <div>
-              <span></span>
-              <span></span>
-              <span></span>
+          <div className="headerHidden" onClick={showHiddenItems}>
+            <div className="dotMain">
+              <div className="dot">
+              </div>
+              <div className="dot">
+              </div>
+              <div className="dot last">
+              </div>
             </div>
           </div>
           <ul>
