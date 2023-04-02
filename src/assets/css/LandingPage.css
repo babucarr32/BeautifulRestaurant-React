@@ -101,6 +101,10 @@ body{
 }
 .burgerTypes ul li img{
   width: 60px;
+  transition: .3s;
+}
+.burgerTypes ul li img:hover{
+  transform: scale(1.3);
 }
 
 
