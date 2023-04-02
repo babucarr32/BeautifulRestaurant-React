@@ -1,15 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import image from "../../assets/images/NewBurger.png";
+import BurgerImage from "./BurgerImage";
 import BurgerTypes from "./BurgerTypes";
+import SocialMediaSites from "./SocialMediaSites";
+import "../../assets/css/LandingPage.css";
 import bbqBurger from "../../assets/images/BBQBurger.png";
 import carolina from "../../assets/images/Corolina.png";
 import friedChickenBurger from "../../assets/images/friedChickenBurger.png";
-import SocialMediaSites from "./SocialMediaSites";
-import "../../assets/css/LandingPage.css";
 
-function LandingPageContent() {
-  return (
-    <div>
+
+export class LandingPageContent extends Component {
+  state = {
+    image: image,
+    bbqBurger: bbqBurger,
+    carolina: carolina,
+    friedChickenBurger: friedChickenBurger
+  }
+  render () {
+    const changeImage = (event)=> {
+      const imagePath = event.target.name;
+      console.log(this.state)
+      const x = document.getElementById("mainImage").src = this.state[imagePath];
+    }
+    console.log(this)
+    return (
+      <div>
         <div className="landingContent">
           <div className="landing">
             <SocialMediaSites />
@@ -28,15 +43,22 @@ function LandingPageContent() {
                     <li className="delList"><del>$16.99</del></li>
                   </ul>
                 </div>
-                <BurgerTypes></BurgerTypes>
+
+                <div className="burgerTypes">
+                    <ul>
+                        <li onClick={changeImage}><img id="mainImages" src={image} name="image" alt="" /></li>
+                        <li onClick={changeImage}><img src={bbqBurger} alt="" name="bbqBurger" /></li>
+                        <li onClick={changeImage}><img src={carolina} alt="" name="carolina" /></li>
+                        <li onClick={changeImage}><img src={friedChickenBurger} alt="" name="friedChickenBurger" /></li>
+                    </ul>
+                </div>
             </div>
-            <div className="mainImage">
-                <img src={image} alt="" />
-            </div>
+            <BurgerImage  />
           </div>
         </div>
     </div>
   );
+}
 }
 
 // https://www.hungryjacks.com.au/menu/whopper/triple-whopper-cheese
