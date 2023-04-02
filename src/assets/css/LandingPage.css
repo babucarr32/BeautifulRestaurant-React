@@ -4,6 +4,7 @@
 }
 :root{
   --red: #e60000;
+  --green: rgb(11, 191, 11);
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -29,6 +30,7 @@ body{
   letter-spacing: 5px;
   font-size: 4em;
   font-weight: 900;
+  font-family: 'Ubuntu', sans-serif;
 }
 .welcomeText ul{
   list-style-type: none;
@@ -37,15 +39,59 @@ body{
   display: flex;
   gap: 20px;
 }
-.welcomeText ul li p{
+.welcomeText ul li p:not(.price){
   border: 1px solid black;
   padding: 8px 20px;
   border-radius: 3vw;
 }
 .welcomeText ul li .Spicy{
-  background-color: #e60000;
+  background-color: var(--red);
   color: white;
-  border-color: #e60000;
+  border-color: var(--red);
+  transition: .5s;
+}
+.welcomeText ul li .Spicy{
+  background-color: var(--red);
+  color: white;
+  border-color: var(--red);
+  transition: .5s;
+}
+.welcomeText ul li .Mild, .Hot{
+  transition: .5s;
+}
+.welcomeText ul li .Mild:hover{
+  background-color: var(--red);
+  color: white;
+}
+.welcomeText ul li .Hot:hover{
+  background-color: var(--red);
+  color: white;
+}
+/* .welcomeText ul li .Hot:hover .Spicy{
+  background-color: white;
+} */
+.addToCart ul:not(.delList){
+  display: flex;
+  align-items: center;
+}
+.addToCartText{
+  background-color: black;
+  color: white;
+}
+.addToCartText:hover{
+  background-color: white;
+  color: black;
+}
+.delList{
+  height: 40px;
+}
+.price{
+  color: var(--green);
+  font-weight: bold;
+}
+.addToCart ul li del{
+  height: 260px;
+  color: var(--red);
 }
 
 

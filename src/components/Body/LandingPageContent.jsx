@@ -11,10 +11,17 @@ function LandingPageContent() {
                 <p className="welcome"><span>Welcome</span>  to <br /> The worlds <br /> <span>Best Restaurant</span></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <ul>
-                  <li><p>Mild</p></li>
+                  <li><p className="Mild">Mild</p></li>
                   <li><p className="Spicy">Spicy</p></li>
-                  <li><p>Hot</p></li>
+                  <li><p className="Hot">Hot</p></li>
                 </ul>
+                <div className="addToCart">
+                  <ul>
+                    <li><p className="addToCartText">Add To Cart</p></li>
+                    <li><p className="price">$12.99</p></li>
+                    <li className="delList"><del>$16.99</del></li>
+                  </ul>
+                </div>
             </div>
             <div className="mainImage">
                 <img src={image} alt="" />
