@@ -13,7 +13,7 @@ function SocialMediaSites() {
             <li><a href=""><img src={facebook} alt="" srcset="" /></a></li>
             <li><a href=""><img src={whatsapp} alt="" srcset="" /></a></li>
             <li><a href=""><img src={instagram} alt="" srcset="" /></a></li>
-            <li><a href=""><img src={twitter} alt="" srcset="" /></a></li>
+            <li className="twitter"><a href=""><img src={twitter} alt="" srcset="" /></a></li>
           </ul>
         </div>
     </div>

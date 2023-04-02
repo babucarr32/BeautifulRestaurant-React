@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../assets/images/NewBurger.png";
+import BurgerTypes from "./BurgerTypes";
 import bbqBurger from "../../assets/images/BBQBurger.png";
 import carolina from "../../assets/images/Corolina.png";
 import friedChickenBurger from "../../assets/images/friedChickenBurger.png";
@@ -27,14 +28,7 @@ function LandingPageContent() {
                     <li className="delList"><del>$16.99</del></li>
                   </ul>
                 </div>
-                <div className="burgerTypes">
-                  <ul>
-                    <li><img src={image} alt="" /></li>
-                    <li><img src={bbqBurger} alt="" /></li>
-                    <li><img src={carolina} alt="" /></li>
-                    <li><img src={friedChickenBurger} alt="" /></li>
-                  </ul>
-                </div>
+                <BurgerTypes></BurgerTypes>
             </div>
             <div className="mainImage">
                 <img src={image} alt="" />

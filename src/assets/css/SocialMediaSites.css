@@ -11,6 +11,9 @@
     margin-right: 20px;
     
 }
-.sites ul li a{
-    text-decoration: none;
+.sites ul li:not(.twitter){
+    margin-bottom: 30px;
+}
+.sites ul li img{
+    width: 25px;
 }
