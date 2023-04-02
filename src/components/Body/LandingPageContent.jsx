@@ -1,15 +1,19 @@
 import React from "react";
 import image from "../../assets/images/NewBurger.png";
-import "../../assets/css/LandingPage.css"
+import "../../assets/css/LandingPage.css";
 
 function LandingPageContent() {
   return (
     <div>
-        <div className="welcomeText">
-            <p>Welcome to <br /> The worlds <br /> Best Restaurant</p>
-        </div>
-        <div className="mainImage">
-            <img src={image} alt="" />
+        <div className="landingContent">
+          <div className="landing">
+            <div className="welcomeText">
+                <p>Welcome to <br /> The worlds <br /> Best Restaurant</p>
+            </div>
+            <div className="mainImage">
+                <img src={image} alt="" />
+            </div>
+          </div>
         </div>
     </div>
   );
