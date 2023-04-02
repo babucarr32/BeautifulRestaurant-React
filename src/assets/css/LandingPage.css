@@ -93,8 +93,15 @@ body{
   height: 260px;
   color: var(--red);
 }
-
-
+.burgerTypes{
+  margin-top: 80px;
+}
+.burgerTypes ul{
+  list-style-type: none;
+}
+.burgerTypes ul li img{
+  width: 60px;
+}
 
 
 

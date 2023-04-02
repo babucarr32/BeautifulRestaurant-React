@@ -22,6 +22,14 @@ function LandingPageContent() {
                     <li className="delList"><del>$16.99</del></li>
                   </ul>
                 </div>
+                <div className="burgerTypes">
+                  <ul>
+                    <li><img src={image} alt="" /></li>
+                    <li><img src={image} alt="" /></li>
+                    <li><img src={image} alt="" /></li>
+                    <li><img src={image} alt="" /></li>
+                  </ul>
+                </div>
             </div>
             <div className="mainImage">
                 <img src={image} alt="" />
