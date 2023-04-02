@@ -5,6 +5,13 @@ function Header() {
   return (
     <div>
         <div className="header">
+          <div className="headerHidden">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <ul>
             <li><a href="">Better Food</a></li>
             <li><a href="">Order Now</a></li>

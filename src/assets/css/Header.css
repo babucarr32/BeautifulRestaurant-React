@@ -43,3 +43,34 @@
     color: white;
     font-weight: bold;
 }
+.headerHidden{
+    display: none;
+}
+@media only screen and (max-width:775px){
+    .headerHidden{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .headerHidden  span{
+        width: 10px;
+        height: 10px;
+        background-color: white;
+    }
+    /* .headerHidden::before{
+        position: absolute;
+        content: "";
+        width: 90%;
+        height: 30px;
+        background-color: white;
+    } */
+    .header ul{
+        display: none;
+    }
+  }
