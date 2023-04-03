@@ -27,7 +27,7 @@ function Header() {
             </div>
           </div>
           <ul id="toShow">
-            <li><a href="">Better Food</a></li>
+            <li><a href="">Menu</a></li>
             <li><a href="">Order Now</a></li>
             <li><a href="">Location</a></li>
             <li className="contact"><a href="">Contact Us</a></li>
