@@ -2,8 +2,16 @@ import React from "react";
 import "../../assets/css/Header.css"
 
 function Header() {
+  let show = false;
   const showHiddenItems = ()=>{
-    console.log("clicked")
+    show = !show
+    console.log(show)
+    if(show){
+      document.getElementById("toShow").style.display = "block";
+    }
+    else{
+      document.getElementById("toShow").style.display = "none";
+    }
   }
   return (
     <div>
@@ -18,7 +26,7 @@ function Header() {
               </div>
             </div>
           </div>
-          <ul>
+          <ul id="toShow">
             <li><a href="">Better Food</a></li>
             <li><a href="">Order Now</a></li>
             <li><a href="">Location</a></li>
