@@ -14,7 +14,7 @@ export class BurgerTypes extends Component{
         const BurgerType = ()=>{
             < LandingPageContent key={"test"}/>
         console.log("Burger type");
-        const BurgerTypes = <BurgerImage image={image} />
+        const BurgerTypes = <BurgerImage image="" />
         this.setState({BurgerTypes: BurgerTypes})
     }
     console.log(this.state)
@@ -24,7 +24,7 @@ export class BurgerTypes extends Component{
         <div>
         <div className="burgerTypes">
             <ul>
-                <li>{this.state.BurgerTypes}</li>
+                {/* <li>{this.state.BurgerTypes}</li> */}
                 <li onClick={BurgerType}><img src={image} alt="" /></li>
                 <li onClick={BurgerType}><img src={bbqBurger} alt="" /></li>
                 <li onClick={BurgerType}><img src={carolina} alt="" /></li>
