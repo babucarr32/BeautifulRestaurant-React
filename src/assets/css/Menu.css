@@ -1,0 +1,13 @@
+.gridConatiner{
+    padding: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.menuBurger{
+    width: 100%;
+}
+.menuItems{
+    /* background-color: red; */
+
+}
