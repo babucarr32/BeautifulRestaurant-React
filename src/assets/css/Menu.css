@@ -15,11 +15,32 @@
 .menuBurger{
     width: 100%;
 }
-.menuItems p{
-    font-size: 1.5em;
-    text-align: center;
+.burgerNamePrice {
     background-color: var(--red);
-    padding: 30px 0;
-    color: white;
+    padding: 20px 0;
     box-shadow: 0 5px 8px black;
+}
+.burgerPriceDiv{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+}
+#burgerName{
+    font-size: 2em;
+    text-align: center;
+    color: white;
+}
+#burgerPrice{
+    font-size: 2em;
+    background-color: var(--green);
+    padding: 5px;
+    border-radius: 1vw;
+    color: black;
+    font-weight: 100;
+}
+.burgerPriceDiv a{
+    text-decoration: none;
+    color: white;
 }

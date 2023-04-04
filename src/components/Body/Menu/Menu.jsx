@@ -10,7 +10,13 @@ function Menu() {
       <div>
         <div className="menuItems">
           <img className="menuBurger" src={data.path} alt="" srcset="" />
-          <p>{data.name}</p>
+          <div className="burgerNamePrice">
+              <p id="burgerName">{data.name}</p>
+            <div className="burgerPriceDiv">
+              <p id="burgerPrice">${data.price}. <sup>00</sup> </p>
+              <p><a href="">Add +</a></p>
+            </div>
+          </div>
         </div>
     </div>
   );
