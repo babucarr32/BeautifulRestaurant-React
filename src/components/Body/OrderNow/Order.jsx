@@ -8,6 +8,7 @@ function Order() {
     const items = JSON.parse(localStorage.getItem('items'));
     if (items) {
     // setItems(items);
+    console.log("Order")
     console.log(items)
     }
   }, []);

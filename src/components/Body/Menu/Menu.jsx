@@ -17,9 +17,9 @@ function Menu() {
     
     const newItems = {burgerName, burgerPrice}
     let itemNew = JSON.parse(localStorage.getItem('items'));
-    
+
     itemNew.push(newItems)
-    console.log(itemNew);
+    // console.log(itemNew);
     setItems(itemNew)
   }
   
