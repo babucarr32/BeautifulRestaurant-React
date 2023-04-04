@@ -5,15 +5,24 @@ import "../../../assets/css/Menu.css";
 
 
 function Menu() {
+  
+  // Get value it button clicked
   const itemToSave = ["Babucarr", "Badjie"];
-  const [items, setItems] = useState({name:"Babucarr", surname:"Badjie"});
+  const [items, setItems] = useState([]);
   localStorage.setItem('items', JSON.stringify(items));
 
-  // Get value it button clicked
-  const addItem = (event)=>{
-    console.log(event.target.parentElement.children[0].innerText)
-    // return(event)
+  const AddItem = (event)=>{
+    const burgerPrice = event.target.parentElement.children[0].innerText;
+    const burgerName = event.target.parentElement.parentElement.children[0].innerText;
+    
+    const newItems = {burgerName, burgerPrice}
+    let itemNew = JSON.parse(localStorage.getItem('items'));
+    
+    itemNew.push(newItems)
+    console.log(itemNew);
+    setItems(itemNew)
   }
+  
   const mappedData = DISHES.map((data)=>{
   return (
     <div>
@@ -23,7 +32,7 @@ function Menu() {
             <p id="burgerName">{data.name}</p>
           <div className="burgerPriceDiv">
             <p id="burgerPrice">${data.price}. <sup>00</sup> </p>
-            <button onClick={addItem} className="addButton">Add +</button>
+            <button onClick={AddItem} className="addButton">Add +</button>
           </div>
         </div>
       </div>
