@@ -2,12 +2,13 @@ import {React, useState, useEffect} from "react";
 import "../../../assets/css/Header.css"
 
 function Order() {
-  const [items, setItems] = useState({name:"name", surname:"Surname"});
-  localStorage.setItem('items', JSON.stringify(items));
+  // const [items, setItems] = useState({name:"name", surname:"Surname"});
+  // localStorage.setItem('items', JSON.stringify(items));
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
     if (items) {
-    setItems(items);
+    // setItems(items);
+    console.log(items)
     }
   }, []);
 
