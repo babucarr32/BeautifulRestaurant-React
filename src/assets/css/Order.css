@@ -6,6 +6,9 @@
     --red: #e60000;
     --green: #0bbf0b;
 }
+.orderContainer{
+    padding: 40px;
+}
 .order{
     display: flex;
     justify-content: center;
@@ -16,41 +19,46 @@
     padding: 20px;
 }
 .row{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between;
-    list-style-type: none;
-    padding: 20px;
-    background-color: #fe6e6e; */
-}
-.cell {
-    flex: 1;
-    border: 1px solid black;
-    padding: 5px;
-  }
-  .cell img{
-    width: 300px;
-  }
-
-  .header {
+    grid-column: 1 / 4;
     font-weight: bold;
-    background-color: lightgray;
-    flex-grow: 1;
-    
-  }
-/* .tabName{}
-.orderedImage{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2px;
+}
+.row:nth-child(even){
+    background-color: #ffffff;
+}
+.cell{
     display: flex;
     align-items: center;
-    background-color: #fe6e6e;
-    margin: 5px;
+}
+.cell img{
+    width: 60%;
+}
+.quantity{
+    background-color: rgb(158, 158, 158);
+    width: fit-content;
+    padding: 10px;
+    border-radius: .5vw;
+}
+.quantity span{
+    transition: .5s;
+    padding: 0 8px;
+}
+.quantity span:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.table{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+.tableHeader{
     padding: 20px;
-    justify-content: space-between;
+    background-color: rgb(158, 158, 158);
+    font-weight: bold;
+    font-size: 1.25em;
 }
-.orderedImage img{
-    width: 200px;
-}
-.orderedImage p{
-    font-size: 1em;
-    text-align: center;
-} */

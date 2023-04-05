@@ -15,11 +15,10 @@ function Order() {
             {/* Adding the filtered data to path */}
             <div className="cell">
               <img src={filterDish[0].path} alt="" srcset="" />
+            <p>{e.burgerName}</p>
             </div>
-            <div className="cell">
-              <p>{e.burgerName}</p>
-              <p>{e.burgerPrice}</p>
-            </div>
+            <p className="quantity"><span>-</span> 3 <span>+</span></p>
+            <p>{e.burgerPrice}</p>
           </div>
         );
       })
@@ -27,12 +26,11 @@ function Order() {
     }
   }, []);
   return (
-    <div className="order">
+    <div className="orderContainer">
       <div className="table">
-        <div className="row">
-          <div className="cell header"><p>Header 1</p></div>
-          <div className="cell header"><p>Header 1</p></div>
-        </div>
+          <div className="tableHeader"><p>PRODUCT</p></div>
+          <div className="tableHeader"><p>QUANTITY</p></div>
+          <div className="tableHeader"><p>PRICE</p></div>
 
         {itemMapped}
       </div>
