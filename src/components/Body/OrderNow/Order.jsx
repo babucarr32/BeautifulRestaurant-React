@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from "react";
 import DISHES from "../../../data/dishes";
-import "../../../assets/css/Header.css"
+import "../../../assets/css/Order.css"
 
 function Order() {
   let [itemMapped, setItemMapped] = useState(null);
@@ -11,10 +11,15 @@ function Order() {
         // Filtering the data
         const filterDish = DISHES.filter((dish)=>dish.name == e.burgerName);
         return (
-          <div>
+          <div className="row">
             {/* Adding the filtered data to path */}
-            <img src={filterDish[0].path} alt="" srcset="" />
-              <h1>{e.burgerName}</h1>
+            <div className="cell">
+              <img src={filterDish[0].path} alt="" srcset="" />
+            </div>
+            <div className="cell">
+              <p>{e.burgerName}</p>
+              <p>{e.burgerPrice}</p>
+            </div>
           </div>
         );
       })
@@ -22,7 +27,16 @@ function Order() {
     }
   }, []);
   return (
-    <h1>{itemMapped}</h1>
+    <div className="order">
+      <div className="table">
+        <div className="row">
+          <div className="cell header"><p>Header 1</p></div>
+          <div className="cell header"><p>Header 1</p></div>
+        </div>
+
+        {itemMapped}
+      </div>
+    </div>
   );
 }
 
