@@ -8,6 +8,48 @@
 }
 .orderContainer{
     padding: 40px;
+    display: flex;
+    gap: 20px;
+}
+.checkOut{
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.359);
+    /* border: 1px solid gray; */
+    height: 20%;
+    color: white;
+    padding: 20px;
+}
+.orderContainer .checkOut ul{
+    list-style-type: none;
+    padding: 20px;
+    background-color: rgba(83, 83, 83, 0.661);
+}
+.orderContainer .checkOut ul li{
+    padding: 20px;
+}
+.orderContainer .checkOut ul li p{
+    font-weight: bold;
+    font-size: 1em;
+}
+.checkOut ul li span{
+    font-weight: 100;
+}
+.orderContainer .checkOut ul li:nth-child(3), .orderContainer .checkOut ul li:nth-child(1){
+    background-color: rgb(101, 101, 101);
+}
+.buttonDiv{
+    /* width: 100%; */
+    text-align: center;
+    margin-top: 20px;
+    /* background-color: rgba(83, 83, 83, 0.46); */
+    padding: 20px;
+}
+.orderContainer .checkOut button{
+    padding: 15px 30px;
+    font-weight: bold;
+    border: none;
+    font-size: 1em;
+    background-color: rgb(0, 157, 255);
 }
 .order{
     display: flex;
@@ -34,7 +76,7 @@
     align-items: center;
 }
 .cell img{
-    width: 60%;
+    width: 30%;
 }
 .quantity{
     background-color: rgb(158, 158, 158);

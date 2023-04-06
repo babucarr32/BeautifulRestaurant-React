@@ -1,15 +1,19 @@
 import {React, useState, useEffect} from "react";
+import OrderSummary from "../Menu/OrderSummary";
 import DISHES from "../../../data/dishes";
 import "../../../assets/css/Order.css"
 
 function Order() {
   let [itemMapped, setItemMapped] = useState(null);
+  let [orderedItems, setOrderedItems] = useState([]);
+  let addItems = []
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
     if (items) {
       let mappedItems = items.map((e)=>{
         // Filtering the data
         const filterDish = DISHES.filter((dish)=>dish.name == e.burgerName);
+        setItemMapped(orderedItems.push(filterDish));
         return (
           <div className="row">
             {/* Adding the filtered data to path */}
@@ -34,6 +38,7 @@ function Order() {
 
         {itemMapped}
       </div>
+      <OrderSummary items = {orderedItems}/>
     </div>
   );
 }
