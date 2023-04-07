@@ -61,7 +61,7 @@ function Menu() {
   return (
     <div>
       <div className="menuItems">
-        <img className="menuBurger" src={data.path} alt="" srcset="" />
+        <img className="menuBurger" src={data.path} alt="" />
         <div className="burgerNamePrice">
             <p id="burgerName">{data.name}</p>
           <div className="burgerPriceDiv">

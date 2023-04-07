@@ -33,7 +33,7 @@
     color: white;
 }
 #burgerPrice{
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: var(--green);
     padding: 5px;
     border-radius: 1vw;
@@ -43,4 +43,15 @@
 .burgerPriceDiv a{
     text-decoration: none;
     color: white;
+}
+.addButton{
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 3vw;
+    cursor: pointer;
+}
+.addButton:hover{
+    background-color: rgb(186, 248, 185);
 }

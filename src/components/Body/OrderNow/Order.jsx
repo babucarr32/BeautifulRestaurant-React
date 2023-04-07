@@ -51,7 +51,7 @@ function Order() {
           <div className="row">
             {/* Adding the filtered data to path */}
             <div className="cell">
-              <img src={filterDish[0].path} alt="" srcset="" />
+              <img src={filterDish[0].path} alt="" />
             <p>{e.burgerName}</p>
             </div>
             <p className="quantity"><span onClick={addProduct} id="minus">-</span> <span id="quantity">1</span> <span onClick={addProduct} id="add">+</span></p>
