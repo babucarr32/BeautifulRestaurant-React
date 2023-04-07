@@ -4,6 +4,15 @@ import DISHES from "../../../data/dishes";
 import "../../../assets/css/Order.css"
 
 function Order() {
+  const addProduct = (e)=>{
+    const OP = e.target.textContent;
+    console.log(e.target.parentElement.children[1].textContent);
+    const quantitySpplitter = e.target.parentElement.textContent.split(" ");
+    if(OP === "+"){
+      let innerValue = e.target.parentElement.children[1].textContent;
+      e.target.parentElement.children[1].textContent = parseInt(innerValue) + 1 ;
+    }
+  }
   let [itemMapped, setItemMapped] = useState(null);
   let [orderedItems, setOrderedItems] = useState([]);
   let addItems = []
@@ -21,7 +30,7 @@ function Order() {
               <img src={filterDish[0].path} alt="" srcset="" />
             <p>{e.burgerName}</p>
             </div>
-            <p className="quantity"><span>-</span> 3 <span>+</span></p>
+            <p className="quantity"><span onClick={addProduct} id="minus">-</span> <span id="quantity">3</span> <span onClick={addProduct} id="add">+</span></p>
             <p>{e.burgerPrice}</p>
           </div>
         );

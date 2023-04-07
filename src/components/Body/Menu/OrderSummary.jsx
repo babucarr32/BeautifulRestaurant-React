@@ -6,7 +6,7 @@ export default function OrderSummary(props){
     let productPrice = 0;
     props.items.map((prop)=>{
         productPrice += prop[0].price;
-        console.log(productQuantity += prop[0].price);
+        // console.log(productQuantity += prop[0].price);
     })
     return (
         <div className="checkOut">
