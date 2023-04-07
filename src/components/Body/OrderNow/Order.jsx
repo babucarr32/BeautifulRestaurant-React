@@ -8,9 +8,16 @@ function Order() {
     const OP = e.target.textContent;
     console.log(e.target.parentElement.children[1].textContent);
     const quantitySpplitter = e.target.parentElement.textContent.split(" ");
+    // Incrementing number
     if(OP === "+"){
       let innerValue = e.target.parentElement.children[1].textContent;
       e.target.parentElement.children[1].textContent = parseInt(innerValue) + 1 ;
+    }
+    else{
+      let innerValue = e.target.parentElement.children[1].textContent;
+      if(innerValue > 0){
+        e.target.parentElement.children[1].textContent = parseInt(innerValue) - 1 ;
+      }
     }
   }
   let [itemMapped, setItemMapped] = useState(null);
