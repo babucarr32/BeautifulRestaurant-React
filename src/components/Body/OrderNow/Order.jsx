@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react";
-import OrderSummary from "../Menu/OrderSummary";
+import OrderSummary from "./OrderSummary";
 import DISHES from "../../../data/dishes";
 import "../../../assets/css/Order.css"
 
@@ -12,13 +12,24 @@ function Order() {
     const quantitySpplitter = e.target.parentElement.textContent.split(" ");
     // Incrementing number
     if(OP === "+"){
+      try{
+        updateQuantity(mappedItems.length += 1);
+      }
+      catch(e){
+        return e
+      }
+      // console.log(quantity);
       let innerValue = e.target.parentElement.children[1].textContent;
       e.target.parentElement.children[1].textContent = parseInt(innerValue) + 1 ;
-      updateQuantity(quantity += 1);
-      console.log(quantity);
       // console.log(quantity);
     }
     else{
+      try{
+        updateQuantity(mappedItems.length -= 1);
+      }
+      catch(e){
+        return e
+      }
       let innerValue = e.target.parentElement.children[1].textContent;
       if(innerValue > 1){
         e.target.parentElement.children[1].textContent = parseInt(innerValue) - 1 ;
@@ -27,11 +38,12 @@ function Order() {
   }
   let [itemMapped, setItemMapped] = useState(null);
   let [orderedItems, setOrderedItems] = useState([]);
-  let addItems = []
+  let addItems = [];
+  let mappedItems = [];
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
     if (items) {
-      let mappedItems = items.map((e)=>{
+      mappedItems = items.map((e)=>{
         // Filtering the data
         const filterDish = DISHES.filter((dish)=>dish.name == e.burgerName);
         setItemMapped(orderedItems.push(filterDish));
@@ -62,8 +74,7 @@ function Order() {
 
         {itemMapped}
       </div>
-      <OrderSummary items = {orderedItems}/>
-      {quantity}
+      <OrderSummary items = {orderedItems} quantity ={quantity}/>
     </div>
   );
 }

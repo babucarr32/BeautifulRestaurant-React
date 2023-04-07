@@ -14,7 +14,7 @@ export default function OrderSummary(props){
             <h1>Order Summary</h1>
             <ul>
                 <li><p>Product Total: <span>{productTotal/2}</span></p></li>
-                <li><p>Product Quantity: <span>{productQuantity}</span></p></li>
+                <li><p>Product Quantity: <span>{props.quantity}</span></p></li>
                 <li><p>Total Price: <span>$ {productPrice/2}</span></p></li>
             </ul>
             <div className="buttonDiv">
