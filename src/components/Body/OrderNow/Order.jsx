@@ -4,18 +4,23 @@ import DISHES from "../../../data/dishes";
 import "../../../assets/css/Order.css"
 
 function Order() {
+
+  let [quantity, updateQuantity] = useState(0)
   const addProduct = (e)=>{
     const OP = e.target.textContent;
-    console.log(e.target.parentElement.children[1].textContent);
+    // console.log(e.target.parentElement.children[1].textContent);
     const quantitySpplitter = e.target.parentElement.textContent.split(" ");
     // Incrementing number
     if(OP === "+"){
       let innerValue = e.target.parentElement.children[1].textContent;
       e.target.parentElement.children[1].textContent = parseInt(innerValue) + 1 ;
+      updateQuantity(quantity += 1);
+      console.log(quantity);
+      // console.log(quantity);
     }
     else{
       let innerValue = e.target.parentElement.children[1].textContent;
-      if(innerValue > 0){
+      if(innerValue > 1){
         e.target.parentElement.children[1].textContent = parseInt(innerValue) - 1 ;
       }
     }
@@ -37,12 +42,15 @@ function Order() {
               <img src={filterDish[0].path} alt="" srcset="" />
             <p>{e.burgerName}</p>
             </div>
-            <p className="quantity"><span onClick={addProduct} id="minus">-</span> <span id="quantity">3</span> <span onClick={addProduct} id="add">+</span></p>
+            <p className="quantity"><span onClick={addProduct} id="minus">-</span> <span id="quantity">1</span> <span onClick={addProduct} id="add">+</span></p>
             <p>{e.burgerPrice}</p>
           </div>
         );
       })
-      setItemMapped(mappedItems)
+      setItemMapped(mappedItems);
+      // console.log(quantity);
+      updateQuantity(mappedItems.length);
+      console.log(quantity);
     }
   }, []);
   return (
@@ -55,6 +63,7 @@ function Order() {
         {itemMapped}
       </div>
       <OrderSummary items = {orderedItems}/>
+      {quantity}
     </div>
   );
 }
