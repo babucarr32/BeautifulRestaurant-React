@@ -6,7 +6,14 @@ import "../../../assets/css/Order.css"
 function Order() {
 
   let [quantity, updateQuantity] = useState(0)
-  const addProduct = (e)=>{
+  const addProduct = (e, index, price)=>{
+    
+    // Adding the price and updating the database if "+" is clicked 
+    const filterDish = DISHES.filter((dish)=>dish.id == index);
+    console.log(filterDish[0].price += price);
+    DISHES[index] = filterDish[0];
+    localStorage.setItem('items', JSON.stringify(DISHES));
+
     const OP = e.target.textContent;
     // console.log(e.target.parentElement.children[1].textContent);
     const quantitySpplitter = e.target.parentElement.textContent.split(" ");
@@ -20,8 +27,13 @@ function Order() {
       }
       // console.log(quantity);
       let innerValue = e.target.parentElement.children[1].textContent;
+      // Getting the burgerPrice
+      let burgerPrice = e.target.parentElement.parentElement.children[2].textContent.split(".")[0].split("$")[1];
+      console.log(orderedItems);
+      // setOrderedItems
       e.target.parentElement.children[1].textContent = parseInt(innerValue) + 1 ;
       // console.log(quantity);
+
     }
     else{
       try{
@@ -46,6 +58,7 @@ function Order() {
       mappedItems = items.map((e)=>{
         // Filtering the data
         const filterDish = DISHES.filter((dish)=>dish.name == e.burgerName);
+        console.log(filterDish)
         setItemMapped(orderedItems.push(filterDish));
         return (
           <div className="row">
@@ -54,7 +67,7 @@ function Order() {
               <img src={filterDish[0].path} alt="" />
             <p>{e.burgerName}</p>
             </div>
-            <p className="quantity"><span onClick={addProduct} id="minus">-</span> <span id="quantity">1</span> <span onClick={addProduct} id="add">+</span></p>
+            <p className="quantity"><span onClick={(e)=>addProduct(e, filterDish[0].id, filterDish[0].price)} id="minus">-</span> <span id="quantity">1</span> <span onClick={(e)=>addProduct(e, filterDish[0].id, filterDish[0].price)} id="add">+</span></p>
             <p>{e.burgerPrice}</p>
           </div>
         );
