@@ -43,7 +43,7 @@ function Order() {
             <p>{e.burgerName}</p>
             </div>
             <p className="quantity"><span onClick={(event)=>addProduct(event, "-", e.burgerPrice, originalPrice, e.id)} id="minus">-</span> <span id="quantity">1</span> <span onClick={(event)=>addProduct(event, "+", e.burgerPrice, originalPrice, e.id)} id="add">+</span></p>
-            <p>{e.burgerPrice}</p>
+            <p>${e.burgerPrice}</p>
           </div>
         );
       }))
