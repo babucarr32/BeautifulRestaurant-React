@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function OrderSummary(props){
-    console.log(props)
+    // console.log(props)
     const productTotal =props.items.length;
     let productQuantity = 0;
     let productPrice = 0;
