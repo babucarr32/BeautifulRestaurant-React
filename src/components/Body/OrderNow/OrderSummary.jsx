@@ -2,22 +2,20 @@ import React from "react";
 
 export default function OrderSummary(props){
     try{
-
         const productTotal =props.items.length;
-        let productQuantity = 0;
+        console.log(productTotal)
         let productPrice = 0;
         props.items.map((prop)=>{
             productPrice += prop.burgerPrice;
-            // console.log(productQuantity += prop[0].price);
         })
         return (
         <div className="checkOut">
             <form action="" method="">
             <h1>Order Summary</h1>
             <ul>
-                <li><p>Product Total: <span>{productTotal/2}</span></p></li>
+                <li><p>Product Total: <span>{productTotal}</span></p></li>
                 <li><p>Product Quantity: <span>{props.quantity}</span></p></li>
-                <li><p>Total Price: <span>$ {productPrice/2}</span></p></li>
+                <li><p>Total Price: <span>$ {productPrice}</span></p></li>
             </ul>
             <div className="buttonDiv">
                 <button type="submit">Checkout</button>

@@ -9,13 +9,14 @@ function Order() {
   let [itemMapped, mappedItems] = useState(null);
   let [orderedItems, orderedItemsUpdate] = useState([]);
   let [quantityCount, quantityCountUpdate] = useState(1);
-  let [defaultBurgerPrice, defaultBurgerPriceUpdate] = useState(1);
-
+  
   const addProduct = (e, op, price, originalPrice, id)=>{
-    console.log(originalPrice)
     let quantity = e.target.parentElement.children[1].textContent; 
     let addedQualiy = parseInt(quantity);
     op === "+" ? e.target.parentElement.children[1].textContent = addedQualiy+=1: e.target.parentElement.children[1].textContent = addedQualiy-=1;
+
+    const getPrice = e.target.parentElement.parentElement.children[2].textContent;
+    console.log(getPrice);
     let updatedQuantity = LSStorageItems.filter((data)=>data.id === id);
     let inner = updatedQuantity[0].burgerPrice;
     inner = inner + originalPrice;
@@ -28,7 +29,6 @@ function Order() {
       }
     })
   };
-  
 
   useEffect(() => {
     orderedItemsUpdate(LSStorageItems);
@@ -43,7 +43,6 @@ function Order() {
             <p>{e.burgerName}</p>
             </div>
             <p className="quantity"><span onClick={(event)=>addProduct(event, "-", e.burgerPrice, originalPrice, e.id)} id="minus">-</span> <span id="quantity">1</span> <span onClick={(event)=>addProduct(event, "+", e.burgerPrice, originalPrice, e.id)} id="add">+</span></p>
-            
             <p>{e.burgerPrice}</p>
           </div>
         );
