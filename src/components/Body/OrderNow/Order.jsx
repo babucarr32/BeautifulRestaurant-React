@@ -11,11 +11,11 @@ function Order() {
   let [defaultBurgerPrice, defaultBurgerPriceUpdate] = useState(1);
 
   const addProduct = (e, op, price)=>{
-    op === "+" ? quantityCountUpdate(quantityCount += 1): quantityCountUpdate(quantityCount -= 1)
     defaultBurgerPriceUpdate(defaultBurgerPrice += price);
     let quantity = e.target.parentElement.children[1].textContent; 
     let addedQualiy = parseInt(quantity);
-    e.target.parentElement.children[1].textContent = addedQualiy+=1;
+    op === "+" ? e.target.parentElement.children[1].textContent = addedQualiy+=1: e.target.parentElement.children[1].textContent = addedQualiy-=1;
+    
   };
   
 
