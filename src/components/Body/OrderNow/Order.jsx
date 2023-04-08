@@ -9,10 +9,18 @@ function Order() {
   const addProduct = (e, index, price)=>{
     
     // Adding the price and updating the database if "+" is clicked 
-    const filterDish = DISHES.filter((dish)=>dish.id == index);
-    console.log(filterDish[0].price += price);
-    DISHES[index] = filterDish[0];
-    localStorage.setItem('items', JSON.stringify(DISHES));
+    const filterDish = items.filter((dish)=>dish.id == index);
+    try{
+      let burgerPriceInt = filterDish[0].burgerPrice;
+      burgerPriceInt = burgerPriceInt.split(".")[0].split("$")[1]
+      filterDish[0].burgerPrice = parseInt(burgerPriceInt) + price;
+      console.log(filterDish[0].burgerPrice);
+    }
+    catch(e){
+      let burgerPriceInt = filterDish[0].burgerPrice;
+      filterDish[0].burgerPrice = parseInt(burgerPriceInt) + price;
+      console.log(filterDish[0].burgerPrice);
+    }
 
     const OP = e.target.textContent;
     // console.log(e.target.parentElement.children[1].textContent);
@@ -50,10 +58,13 @@ function Order() {
   }
   let [itemMapped, setItemMapped] = useState(null);
   let [orderedItems, setOrderedItems] = useState([]);
+  let [items, setItems] = useState("");
   let addItems = [];
   let mappedItems = [];
+  // let items = ""; 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('items'));
+    setItems(items = JSON.parse(localStorage.getItem('items')));
+
     if (items) {
       mappedItems = items.map((e)=>{
         // Filtering the data

@@ -15,13 +15,13 @@ function Menu() {
   //   localStorage.setItem('items', JSON.stringify(items));
   // }
 
-  const AddItem = (event)=>{
+  const AddItem = (event, id)=>{
     const burgerPrice = event.target.parentElement.children[0].innerText;
     const burgerName = event.target.parentElement.parentElement.children[0].innerText;
     
     let getLStorage = JSON.parse(localStorage.getItem('items'));
     if(getLStorage === null){
-      newItems = [{burgerName, burgerPrice}]
+      newItems = [{id, burgerName, burgerPrice}]
       localStorage.setItem('items', JSON.stringify(newItems));
       // getLStorage = JSON.parse(localStorage.getItem('items'));
       // itemNew.push(getLStorage);
@@ -30,7 +30,7 @@ function Menu() {
     }
     else{
       getLStorage = JSON.parse(localStorage.getItem('items'));
-      newItems = {burgerName, burgerPrice};
+      newItems = {id, burgerName, burgerPrice}
       getLStorage.push(newItems);
       // setItems(getLStorage);
       localStorage.setItem('items', JSON.stringify(getLStorage));
@@ -66,7 +66,7 @@ function Menu() {
             <p id="burgerName">{data.name}</p>
           <div className="burgerPriceDiv">
             <p id="burgerPrice">${data.price}. <sup>00</sup> </p>
-            <button onClick={AddItem} className="addButton">Add +</button>
+            <button onClick={(e)=>AddItem(e, data.id)} className="addButton">Add +</button>
           </div>
         </div>
       </div>
