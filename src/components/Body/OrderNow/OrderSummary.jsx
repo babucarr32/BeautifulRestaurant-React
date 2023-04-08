@@ -1,15 +1,16 @@
 import React from "react";
 
 export default function OrderSummary(props){
-    // console.log(props)
-    const productTotal =props.items.length;
-    let productQuantity = 0;
-    let productPrice = 0;
-    props.items.map((prop)=>{
-        productPrice += prop.burgerPrice;
-        // console.log(productQuantity += prop[0].price);
-    })
-    return (
+    try{
+
+        const productTotal =props.items.length;
+        let productQuantity = 0;
+        let productPrice = 0;
+        props.items.map((prop)=>{
+            productPrice += prop.burgerPrice;
+            // console.log(productQuantity += prop[0].price);
+        })
+        return (
         <div className="checkOut">
             <form action="" method="">
             <h1>Order Summary</h1>
@@ -24,4 +25,5 @@ export default function OrderSummary(props){
             </form>
         </div>
     )
+    }catch(err){return null};
 }

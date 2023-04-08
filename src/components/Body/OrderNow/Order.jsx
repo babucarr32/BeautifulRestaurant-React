@@ -18,7 +18,6 @@ function Order() {
     op === "+" ? e.target.parentElement.children[1].textContent = addedQualiy+=1: e.target.parentElement.children[1].textContent = addedQualiy-=1;
     let updatedQuantity = LSStorageItems.filter((data)=>data.id === id);
     let inner = updatedQuantity[0].burgerPrice;
-    const pricenew = price;
     inner = inner + originalPrice;
     updatedQuantity[0].burgerPrice = inner;
     LSStorageItems.map((data, index)=>{
