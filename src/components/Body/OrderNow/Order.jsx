@@ -6,14 +6,22 @@ import "../../../assets/css/Order.css"
 function Order() {
   let [LSStorageItems, LSStorageItemsUpdate] = useState("");
   let [itemMapped, mappedItems] = useState(null);
+  let [orderedItems, orderedItemsUpdate] = useState([]);
   let [quantityCount, quantityCountUpdate] = useState(1);
+  let [defaultBurgerPrice, defaultBurgerPriceUpdate] = useState(1);
 
-  const addProduct = (e, op)=>{
+  const addProduct = (e, op, price)=>{
     op === "+" ? quantityCountUpdate(quantityCount += 1): quantityCountUpdate(quantityCount -= 1)
-    console.log(op)
+    defaultBurgerPriceUpdate(defaultBurgerPrice += price);
+    let quantity = e.target.parentElement.children[1].textContent; 
+    let addedQualiy = parseInt(quantity);
+    e.target.parentElement.children[1].textContent = addedQualiy+=1;
   };
+  
+
   useEffect(() => {
     LSStorageItemsUpdate = (LSStorageItems = JSON.parse(localStorage.getItem('items')));
+    orderedItemsUpdate(LSStorageItems);
     if (LSStorageItems) {
         mappedItems (itemMapped = LSStorageItems.map((e)=>{
         const filterDish = DISHES.filter((dish)=>dish.name == e.burgerName);
@@ -23,13 +31,14 @@ function Order() {
               <img src={filterDish[0].path} alt="" />
             <p>{e.burgerName}</p>
             </div>
-            <p className="quantity"><span onClick={(e)=>addProduct(e, "-")} id="minus">-</span> <span id="quantity">{quantityCount}</span> <span onClick={(e)=>addProduct(e, "+")} id="add">+</span></p>
+            <p className="quantity"><span onClick={(event)=>addProduct(event, "-", e.burgerPrice)} id="minus">-</span> <span id="quantity">1</span> <span onClick={(event)=>addProduct(event, "+", e.burgerPrice)} id="add">+</span></p>
+            
             <p>{e.burgerPrice}</p>
           </div>
         );
       }))
     }
-  });
+  }, [quantityCount]);
 
   return (
     <div className="orderContainer">
@@ -40,7 +49,7 @@ function Order() {
 
         {itemMapped}
       </div>
-      {/* <OrderSummary items = {orderedItems} quantity ={quantity}/> */}
+      <OrderSummary items = {orderedItems} />
     </div>
   );
 }

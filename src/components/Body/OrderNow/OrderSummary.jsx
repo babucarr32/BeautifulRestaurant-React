@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function OrderSummary(props){
-    // console.log(props)
+    console.log(props)
     const productTotal =props.items.length;
     let productQuantity = 0;
     let productPrice = 0;
     props.items.map((prop)=>{
-        productPrice += prop[0].price;
+        productPrice += prop.burgerPrice;
         // console.log(productQuantity += prop[0].price);
     })
     return (
