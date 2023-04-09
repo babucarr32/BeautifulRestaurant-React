@@ -14,7 +14,7 @@ export default function OrderSummary(props){
             <ul>
                 <li><p>Product Total: <span>{productTotal}</span></p></li>
                 <li><p>Product Quantity: <span>{props.quantity}</span></p></li>
-                <li><p>Total Price: <span>$ {productPrice}</span></p></li>
+                <li><p>Total Price: <span>$ {productPrice.toLocaleString()}</span></p></li>
             </ul>
             <div className="buttonDiv">
                 <button type="submit">Checkout</button>
