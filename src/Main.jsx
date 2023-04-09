@@ -8,6 +8,8 @@ import Order from "./components/Body/OrderNow/Order";
 import Header from "./components/Header/Header";
 
 function Main() {
+  const location = window.location.href.split("/");
+  console.log(location)
   return (
     <div>
         <BrowserRouter>
@@ -23,5 +25,5 @@ function Main() {
     </div>
   );
 }
-
+{/* <a href="https://www.freepik.com/free-vector/modern-world-map-with-pins_1177535.htm#query=world%20map%20pin&position=21&from_view=keyword&track=ais">Image by Harryarts</a> on Freepik */}
 export default Main;

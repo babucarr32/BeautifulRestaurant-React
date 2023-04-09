@@ -12,7 +12,7 @@ function Contact() {
         </ul>
       </div>
       <div className="imgDiv">
-        <img src="assets\images\undraw_personal_text_re_vqj3.svg" alt="" srcset="" />
+        {/* <img src="assets\images\undraw_personal_text_re_vqj3.svg" alt="" srcset="" /> */}
         <div className="formDiv">
           <p>Get In Touch With Us</p>
           <form action="">

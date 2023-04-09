@@ -3,7 +3,6 @@ import React from "react";
 export default function OrderSummary(props){
     try{
         const productTotal =props.items.length;
-        console.log(productTotal)
         let productPrice = 0;
         props.items.map((prop)=>{
             productPrice += prop.burgerPrice;
