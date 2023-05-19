@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import BurgerImage from "./BurgerImage";
 import SocialMediaSites from "./SocialMediaSites";
 import WelcomeText from "./WelcomeText";
@@ -7,19 +7,17 @@ import SpicyList from "./SpicyList";
 
 function WelcomeContainer() {
   const [image, setImage] = useState("/assets/images/NewBurger.png");
-  const [bbqBurger, setBbqBurger] = useState("/assets/images/NewBurger.png");
+  const [bbqBurger, setBbqBurger] = useState("/assets/images/cheesyBeacon.png");
   const [carolina, setCarolina] = useState("/assets/images/Corolina.png");
   const [friedChickenBurger, setFriedChickenBurger] = useState(
     "/assets/images/friedChickenBurger.png"
   );
+  const changeMainImageRef = useRef();
+  const [changeImageOnClick, setChangeImageOnClick] = useState();
 
-  const changeImage = (event) => {
-    const imagePath = event.target.name;
-    console.log(imagePath);
-    try {
-      document.getElementById("hideBurgerLast").src = this.state[imagePath];
-      document.getElementById("hideBurgerFirst").src = this.state[imagePath];
-    } catch (err) {}
+  const changeImage = (imgPath) => {
+    setChangeImageOnClick(imgPath);
+    changeMainImageRef.current.src = imgPath;
   };
 
   return (
@@ -45,20 +43,20 @@ function WelcomeContainer() {
         </ul>
       </div>
       <div className="hideBurgerFirst">
-        <BurgerImage id={"hideBurgerFirst"} />
+        <BurgerImage id={"hideBurgerFirst"} imageRef={changeMainImageRef} />
       </div>
       <div className="burgerTypes">
         <ul>
-          <li onClick={changeImage}>
+          <li onClick={() => changeImage(image)}>
             <img className="mainImages" src={image} name="image" alt="" />
           </li>
-          <li onClick={changeImage}>
-            <img src={bbqBurger} alt="" name="bbqBurger" />
+          <li onClick={() => changeImage(bbqBurger)}>
+            <img src={bbqBurger} alt="" name="NewBurger" />
           </li>
-          <li onClick={changeImage}>
+          <li onClick={() => changeImage(carolina)}>
             <img src={carolina} alt="" name="carolina" />
           </li>
-          <li onClick={changeImage}>
+          <li onClick={() => changeImage(friedChickenBurger)}>
             <img src={friedChickenBurger} alt="" name="friedChickenBurger" />
           </li>
         </ul>

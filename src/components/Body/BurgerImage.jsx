@@ -1,15 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import image from "../../assets/images/NewBurger.png";
-import "../../assets/css/BurgerImage.css"
+import "../../assets/css/BurgerImage.css";
 
-function BurgerImage(props) {
+const BurgerImage = forwardRef(function BurgerImage({ id, imageRef }) {
   return (
     <div>
-        <div className="mainImage" >
-            <img id={props.id} src={image} alt=""/>
-        </div>
+      <div className="mainImage">
+        <img id={id} src={image} alt="" ref={imageRef} />
+      </div>
     </div>
   );
-}
+});
 
 export default BurgerImage;
