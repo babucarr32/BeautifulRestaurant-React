@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import BurgerImage from "./BurgerImage";
 import SocialMediaSites from "./SocialMediaSites";
+import WelcomeText from "./WelcomeText";
+import WelcomeIntro from "./WelcomeIntro";
+import SpicyList from "./SpicyList";
 
 function WelcomeContainer() {
   const [image, setImage] = useState("/assets/images/NewBurger.png");
@@ -21,27 +24,13 @@ function WelcomeContainer() {
 
   return (
     <div className="welcomeText">
-      <p className="welcome">
-        <span>Welcome</span> to <br /> The worlds <br />{" "}
-        <span>Best Restaurant</span>
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.{" "}
-      </p>
-      <ul>
-        <li>
-          <p className="Mild">Mild</p>
-        </li>
-        <li>
-          <p className="Spicy">Spicy</p>
-        </li>
-        <li>
-          <p className="Hot">Hot</p>
-        </li>
-      </ul>
+      <WelcomeText />
+      <WelcomeIntro />
+
+      <SpicyList className={"Mild"} spice={"Mild"} />
+      <SpicyList className={"Spicy"} spice={"MilSpicyd"} />
+      <SpicyList className={"Hot"} spice={"Hot"} />
+
       <div className="addToCart">
         <ul>
           <li>
