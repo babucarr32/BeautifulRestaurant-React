@@ -1,9 +1,10 @@
 import React from "react";
 
-function List({ className, spice }) {
+function List({ className, spice, child, onClickFunc }) {
   return (
-    <li>
-      <p className={className}>{spice}</p>
+    <li onClick={onClickFunc}>
+      {spice ? <p className={className}>{spice}</p> : null}
+      {child}
     </li>
   );
 }

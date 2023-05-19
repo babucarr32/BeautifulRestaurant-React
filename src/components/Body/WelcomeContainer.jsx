@@ -44,6 +44,27 @@ function WelcomeContainer() {
       </div>
       <div className="burgerTypes">
         <ul>
+          <List
+            onClickFunc={() => changeImage(image)}
+            child={
+              <img className="mainImages" src={image} name="image" alt="" />
+            }
+          />
+          <List
+            onClickFunc={() => changeImage(bbqBurger)}
+            child={<img src={bbqBurger} alt="" name="NewBurger" />}
+          />
+          <List
+            onClickFunc={() => changeImage(carolina)}
+            child={<img src={carolina} alt="" name="carolina" />}
+          />
+          <List
+            onClickFunc={() => changeImage(friedChickenBurger)}
+            child={
+              <img src={friedChickenBurger} alt="" name="friedChickenBurger" />
+            }
+          />
+          {/* 
           <li onClick={() => changeImage(image)}>
             <img className="mainImages" src={image} name="image" alt="" />
           </li>
@@ -55,7 +76,7 @@ function WelcomeContainer() {
           </li>
           <li onClick={() => changeImage(friedChickenBurger)}>
             <img src={friedChickenBurger} alt="" name="friedChickenBurger" />
-          </li>
+          </li> */}
         </ul>
       </div>
       <SocialMediaSites />
