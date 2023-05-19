@@ -1,12 +1,24 @@
 import React, { forwardRef } from "react";
-import image from "../../assets/images/NewBurger.png";
 import "../../assets/css/BurgerImage.css";
 
-const BurgerImage = forwardRef(function BurgerImage({ id, imageRef }) {
+const BurgerImage = forwardRef(function BurgerImage({
+  id,
+  imageRef,
+  imagePath,
+  imgClass,
+  imgName,
+}) {
   return (
     <div>
-      <div className="mainImage">
-        <img id={id} src={image} alt="" ref={imageRef} />
+      <div className={imageRef && "mainImage"}>
+        <img
+          className={imgClass}
+          id={id}
+          src={imagePath}
+          alt=""
+          ref={imageRef}
+          name={imgName}
+        />
       </div>
     </div>
   );

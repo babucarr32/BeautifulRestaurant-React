@@ -40,43 +40,41 @@ function WelcomeContainer() {
         </ul>
       </div>
       <div className="hideBurgerFirst">
-        <BurgerImage id={"hideBurgerFirst"} imageRef={changeMainImageRef} />
+        <BurgerImage
+          id={"hideBurgerFirst"}
+          imageRef={changeMainImageRef}
+          imagePath={image}
+        />
       </div>
       <div className="burgerTypes">
         <ul>
           <List
             onClickFunc={() => changeImage(image)}
             child={
-              <img className="mainImages" src={image} name="image" alt="" />
+              <BurgerImage
+                imagePath={image}
+                imgClass={"mainImages"}
+                imgName={"image"}
+              />
             }
           />
           <List
             onClickFunc={() => changeImage(bbqBurger)}
-            child={<img src={bbqBurger} alt="" name="NewBurger" />}
+            child={<BurgerImage imagePath={bbqBurger} imgName={"NewBurger"} />}
           />
           <List
             onClickFunc={() => changeImage(carolina)}
-            child={<img src={carolina} alt="" name="carolina" />}
+            child={<BurgerImage imagePath={carolina} imgName={"carolina"} />}
           />
           <List
             onClickFunc={() => changeImage(friedChickenBurger)}
             child={
-              <img src={friedChickenBurger} alt="" name="friedChickenBurger" />
+              <BurgerImage
+                imagePath={friedChickenBurger}
+                imgName={"friedChickenBurger"}
+              />
             }
           />
-          {/* 
-          <li onClick={() => changeImage(image)}>
-            <img className="mainImages" src={image} name="image" alt="" />
-          </li>
-          <li onClick={() => changeImage(bbqBurger)}>
-            <img src={bbqBurger} alt="" name="NewBurger" />
-          </li>
-          <li onClick={() => changeImage(carolina)}>
-            <img src={carolina} alt="" name="carolina" />
-          </li>
-          <li onClick={() => changeImage(friedChickenBurger)}>
-            <img src={friedChickenBurger} alt="" name="friedChickenBurger" />
-          </li> */}
         </ul>
       </div>
       <SocialMediaSites />
