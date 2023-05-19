@@ -1,12 +1,13 @@
 import React from "react";
 import "../../../assets/css/Location.css";
 import Paragraph from "../ContactUs/Paragraph";
+import BurgerImage from "../BurgerImage";
 
 function Location() {
   return (
     <div className="locationContainer">
       <div className="imgDiv">
-        <img src="assets\images\undraw_map_re_60yf.svg" alt="" />
+        <BurgerImage imagePath={"/assets/images/undraw_map_re_60yf.svg"} />
       </div>
       <div className="locationInfo">
         <div className="locationIntro">
