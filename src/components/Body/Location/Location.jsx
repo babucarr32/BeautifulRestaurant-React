@@ -1,6 +1,6 @@
 import React from "react";
-import "../../../assets/css/Location.css"
-
+import "../../../assets/css/Location.css";
+import Paragraph from "../ContactUs/Paragraph";
 
 function Location() {
   return (
@@ -10,9 +10,15 @@ function Location() {
       </div>
       <div className="locationInfo">
         <div className="locationIntro">
-          <h1>LOCATION:</h1>
-          <p>121 Rock Street, 21 Avenue.</p>
-          <p>Banjul, BJL 123-45678.</p>
+          <Paragraph>
+            <h1>LOCATION:</h1>
+          </Paragraph>
+          <Paragraph>
+            <p>121 Rock Street, 21 Avenue.</p>
+          </Paragraph>
+          <Paragraph>
+            <p>Banjul, BJL 123-45678.</p>
+          </Paragraph>
         </div>
       </div>
     </div>
