@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-import Order from "../OrderNow/Order";
 import DISHES from "../../../data/dishes";
 import "../../../assets/css/Menu.css";
 import BurgerImage from "../BurgerImage";
+import Button from "./Button";
 
 function Menu() {
   // Get value it button clicked
@@ -20,24 +20,22 @@ function Menu() {
     }
   };
 
-  const mappedData = DISHES.map((data) => {
+  const mappedDishes = DISHES.map((data) => {
     return (
       <div>
         <div className="menuItems">
           <BurgerImage imgClass={"menuBurger"} imagePath={data.path} />
-          {/* <img className="menuBurger" src={data.path} alt="" /> */}
           <div className="burgerNamePrice">
             <p id="burgerName">{data.name}</p>
             <div className="burgerPriceDiv">
               <p id="burgerPrice">
                 ${data.price}. <sup>00</sup>{" "}
               </p>
-              <button
-                onClick={(e) => AddItem(e, data.id, data.price, data.name)}
-                className="addButton"
-              >
-                Add +
-              </button>
+              <Button
+                buttonFunc={(e) => AddItem(e, data.id, data.price, data.name)}
+                className={"addButton"}
+                text={"Add +"}
+              />
             </div>
           </div>
         </div>
@@ -46,7 +44,7 @@ function Menu() {
   });
   return (
     <>
-      <div className="gridConatiner">{mappedData}</div>
+      <div className="gridConatiner">{mappedDishes}</div>
     </>
   );
 }
