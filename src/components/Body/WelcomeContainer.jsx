@@ -39,8 +39,10 @@ function WelcomeContainer() {
         <WelcomeText />
         <WelcomeIntro />
 
-        <SpicyListContainer />
-        <HideBurger />
+        <div style={{ display: "flex", alignItems: "end" }}>
+          <SpicyListContainer />
+          <HideBurger />
+        </div>
         <ImageListContainer />
         <SocialMediaSites />
       </div>
