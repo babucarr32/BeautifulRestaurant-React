@@ -4,14 +4,8 @@ import BurgerImage from "./BurgerImage";
 import { BurgerTypeContext } from "./WelcomeContainer";
 
 function ImageListContainer() {
-  const {
-    image,
-    bbqBurger,
-    carolina,
-    friedChickenBurger,
-    changeImageOnClick,
-    changeImage,
-  } = useContext(BurgerTypeContext);
+  const { image, bbqBurger, carolina, friedChickenBurger, changeImage } =
+    useContext(BurgerTypeContext);
 
   return (
     <div className="burgerTypes">
