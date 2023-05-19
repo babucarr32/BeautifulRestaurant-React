@@ -3,7 +3,7 @@ import BurgerImage from "./BurgerImage";
 import SocialMediaSites from "./SocialMediaSites";
 import WelcomeText from "./WelcomeText";
 import WelcomeIntro from "./WelcomeIntro";
-import SpicyList from "./SpicyList";
+import List from "./List";
 
 function WelcomeContainer() {
   const [image, setImage] = useState("/assets/images/NewBurger.png");
@@ -25,18 +25,15 @@ function WelcomeContainer() {
       <WelcomeText />
       <WelcomeIntro />
 
-      <SpicyList className={"Mild"} spice={"Mild"} />
-      <SpicyList className={"Spicy"} spice={"MilSpicyd"} />
-      <SpicyList className={"Hot"} spice={"Hot"} />
-
+      <ul>
+        <List className={"Mild"} spice={"Mild"} />
+        <List className={"Spicy"} spice={"MilSpicyd"} />
+        <List className={"Hot"} spice={"Hot"} />
+      </ul>
       <div className="addToCart">
         <ul>
-          <li>
-            <p className="addToCartText">Add +</p>
-          </li>
-          <li>
-            <p className="price">$12.99</p>
-          </li>
+          <List className={"addToCartText"} spice={"Add +"} />
+          <List className={"price"} spice={"$12.99"} />
           <li className="delList">
             <del>$16.99</del>
           </li>
