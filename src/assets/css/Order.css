@@ -1,106 +1,20 @@
-*{
-    padding: 0;
-    margin: 0;
+.orderContainer {
+  padding: 50px;
 }
-:root{
-    --red: #e60000;
-    --green: #0bbf0b;
+.orderContainer table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  padding: 20px;
 }
-.orderContainer{
-    padding: 40px;
-    display: flex;
-    gap: 20px;
+.orderContainer table tr th {
+  padding: 20px;
+  border: 1px solid #dddddd;
 }
-.checkOut{
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0.359);
-    /* border: 1px solid gray; */
-    height: 20%;
-    color: white;
-    padding: 20px;
+.orderContainer table tr td {
+  padding: 20px;
+  border: 1px solid #dddddd;
 }
-.orderContainer .checkOut ul{
-    list-style-type: none;
-    padding: 20px;
-    background-color: rgba(83, 83, 83, 0.661);
-}
-.orderContainer .checkOut ul li{
-    padding: 20px;
-}
-.orderContainer .checkOut ul li p{
-    font-weight: bold;
-    font-size: 1em;
-}
-.checkOut ul li span{
-    font-weight: 100;
-}
-.orderContainer .checkOut ul li:nth-child(3), .orderContainer .checkOut ul li:nth-child(1){
-    background-color: rgb(101, 101, 101);
-}
-.buttonDiv{
-    /* width: 100%; */
-    text-align: center;
-    margin-top: 20px;
-    /* background-color: rgba(83, 83, 83, 0.46); */
-    padding: 20px;
-}
-.orderContainer .checkOut button{
-    padding: 15px 30px;
-    font-weight: bold;
-    border: none;
-    font-size: 1em;
-    background-color: rgb(0, 157, 255);
-}
-.order{
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
-.table{
-    background-color: rgb(223, 223, 223);
-    padding: 20px;
-}
-.row{
-    grid-column: 1 / 4;
-    font-weight: bold;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2px;
-}
-.row:nth-child(even){
-    background-color: #ffffff;
-}
-.cell{
-    display: flex;
-    align-items: center;
-}
-.cell img{
-    width: 30%;
-}
-.quantity{
-    background-color: rgb(158, 158, 158);
-    width: fit-content;
-    padding: 10px;
-    border-radius: .5vw;
-}
-.quantity span{
-    transition: .5s;
-    padding: 0 8px;
-}
-.quantity span:hover{
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-.table{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-}
-.tableHeader{
-    padding: 20px;
-    background-color: rgb(158, 158, 158);
-    font-weight: bold;
-    font-size: 1.25em;
-}
+.orderContainer table tr:nth-child(even) {
+  background-color: gray;
+}/*# sourceMappingURL=Order.css.map */

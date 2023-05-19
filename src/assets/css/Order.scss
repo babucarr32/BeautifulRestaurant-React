@@ -1,0 +1,28 @@
+$grayBg: gray;
+
+@mixin padItem($pad) {
+  padding: $pad;
+}
+.orderContainer {
+  @include padItem(50px);
+  table {
+    // background-color: #0bbf0b;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    @include padItem(20px);
+    tr {
+      th {
+        @include padItem(20px);
+        border: 1px solid #dddddd;
+      }
+      td {
+        @include padItem(20px);
+        border: 1px solid #dddddd;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: $grayBg;
+    }
+  }
+}
