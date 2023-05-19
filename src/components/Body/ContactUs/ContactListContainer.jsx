@@ -1,6 +1,7 @@
 import React from "react";
 import List from "../List";
 import BurgerImage from "../BurgerImage";
+import Paragraph from "./Paragraph";
 
 function ContactListContainer() {
   return (
@@ -9,9 +10,9 @@ function ContactListContainer() {
         child={
           <>
             <BurgerImage imagePath={"/assets/images/call.svg"} />
-            <p>
+            <Paragraph>
               <span>Phone:</span> +220 3626260
-            </p>
+            </Paragraph>
           </>
         }
       />
@@ -19,8 +20,10 @@ function ContactListContainer() {
         child={
           <>
             <BurgerImage imagePath={"/assets/images/mail.svg"} />
-            <span>Email: </span>
-            <a href="mailto:bbabucarr32@gmail.com">bbabucarr32@gmail.com</a>
+            <Paragraph>
+              <span>Email: </span>
+              <a href="mailto:bbabucarr32@gmail.com">bbabucarr32@gmail.com</a>
+            </Paragraph>
           </>
         }
       />
@@ -29,9 +32,9 @@ function ContactListContainer() {
         child={
           <>
             <BurgerImage imagePath={"/assets/images/location.svg"} />
-            <p>
+            <Paragraph>
               <span>Location:</span>The, Gambia.{" "}
-            </p>
+            </Paragraph>
           </>
         }
       />
