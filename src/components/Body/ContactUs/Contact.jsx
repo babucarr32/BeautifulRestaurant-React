@@ -1,29 +1,12 @@
 import React from "react";
 import "../../../assets/css/Contact.css";
+import ContactListContainer from "./ContactListContainer";
 
 function Contact() {
   return (
     <div className="contactContainer">
       <div className="infoDiv">
-        <ul>
-          <li>
-            <img src="assets\images\call.svg" alt="" />
-            <p>
-              <span>Phone:</span> +220 3626260
-            </p>
-          </li>
-          <li>
-            <img src="assets\images\mail.svg" alt="" />
-            <span>Email: </span>
-            <a href="mailto:bbabucarr32@gmail.com">bbabucarr32@gmail.com</a>
-          </li>
-          <li>
-            <img src="assets\images\location.svg" alt="" />
-            <p>
-              <span>Location:</span>The, Gambia.{" "}
-            </p>
-          </li>
-        </ul>
+        <ContactListContainer />
       </div>
       <div className="imgDiv">
         <div className="formDiv">

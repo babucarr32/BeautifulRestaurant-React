@@ -1,10 +1,7 @@
 import React, { useState, useRef, createContext } from "react";
 import SocialMediaSites from "./SocialMediaSites";
-import WelcomeText from "./WelcomeText";
-import WelcomeIntro from "./WelcomeIntro";
 import ImageListContainer from "./ImageListContainer";
-import SpicyListContainer from "./SpicyListContainer";
-import HideBurger from "./HideBurger";
+import BurgerAndIntro from "./BurgerAndIntro";
 
 export const BurgerTypeContext = createContext(null);
 
@@ -36,13 +33,7 @@ function WelcomeContainer() {
       }}
     >
       <div className="welcomeText">
-        <WelcomeText />
-        <WelcomeIntro />
-
-        <div style={{ display: "flex", alignItems: "end" }}>
-          <SpicyListContainer />
-          <HideBurger />
-        </div>
+        <BurgerAndIntro />
         <ImageListContainer />
         <SocialMediaSites />
       </div>
