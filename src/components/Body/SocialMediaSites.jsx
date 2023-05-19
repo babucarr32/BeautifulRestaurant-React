@@ -8,14 +8,30 @@ import "../../assets/css/SocialMediaSites.css";
 function SocialMediaSites() {
   return (
     <div>
-        <div className="sites">
-          <ul>
-            <li><a href="#"><img src={facebook} alt="" srcset="" /></a></li>
-            <li><a href="#"><img src={whatsapp} alt="" srcset="" /></a></li>
-            <li><a href="#"><img src={instagram} alt="" srcset="" /></a></li>
-            <li className="twitter"><a href=""><img src={twitter} alt="" srcset="" /></a></li>
-          </ul>
-        </div>
+      <div className="sites">
+        <ul>
+          <li>
+            <a href="#">
+              <img src={facebook} alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src={whatsapp} alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src={instagram} alt="" />
+            </a>
+          </li>
+          <li className="twitter">
+            <a href="">
+              <img src={twitter} alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
